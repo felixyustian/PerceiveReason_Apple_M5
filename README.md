@@ -122,3 +122,5 @@ pip install pytest && pytest -q     # 8 tests, no network or API key required
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+*Implementation Copyright:** © 2026 [Felix Yustian Setiono](https://linkedin.com/in/felixsetiono). The entire system architecture, API source code, and experimental analysis documents within this repository are the original intellectual property of the author.
