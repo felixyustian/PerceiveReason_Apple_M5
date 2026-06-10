@@ -1,0 +1,33 @@
+# project.yml — XcodeGen spec
+#
+# The repo intentionally does NOT commit a binary .xcodeproj (it churns and
+# merges badly). Generate one with XcodeGen:
+#
+#     brew install xcodegen
+#     cd app && xcodegen generate
+#     open PerceiveReason.xcodeproj
+#
+# Requires Xcode 27 (iOS 27 / macOS 27 SDK) for the Foundation Models APIs.
+
+name: PerceiveReason
+options:
+  bundleIdPrefix: com.felixsetiono
+  deploymentTarget:
+    iOS: "27.0"
+    macOS: "27.0"
+
+targets:
+  PerceiveReason:
+    type: application
+    platform: [iOS, macOS]
+    sources:
+      - PerceiveReason
+    settings:
+      base:
+        SWIFT_VERSION: "6.0"
+        GENERATE_INFOPLIST_FILE: YES
+        # Camera/photo usage strings — fill in if you wire up a picker.
+        INFOPLIST_KEY_NSCameraUsageDescription: "Used to capture images for on-device analysis."
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "Used to select images for on-device analysis."
+    # Bundle the Core ML model produced by ../pipeline here:
+    #   resources: [PerceiveReason/MobileNetV3.mlpackage]

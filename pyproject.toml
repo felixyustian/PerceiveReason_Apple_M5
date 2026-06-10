@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perceive-reason"
+version = "0.1.0"
+description = "Provider-agnostic on-device Perceive->Reason pipeline for the Apple ML stack (Core ML + Foundation Models)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Felix Setiono" }]
+dependencies = ["coremltools>=8.0", "torch>=2.2,<2.8", "torchvision>=0.17"]
+
+[project.optional-dependencies]
+claude = ["anthropic>=0.40"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+perceive-reason = "pipeline.cli:main"
+
+[tool.setuptools]
+packages = ["pipeline", "pipeline.coreml_convert", "pipeline.reasoning", "pipeline.reasoning.providers", "pipeline.examples"]

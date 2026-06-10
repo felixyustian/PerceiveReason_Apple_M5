@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+.perceive-reason/
+
+# Core ML artifacts (regenerate with the pipeline)
+*.mlpackage/
+*.mlmodel
+*.mlmodelc/
+
+# Xcode (project is generated from project.yml via XcodeGen)
+app/*.xcodeproj/
+app/*.xcworkspace/
+DerivedData/
+.DS_Store
+
+# Secrets
+.env

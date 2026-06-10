@@ -1,0 +1,10 @@
+# Perceive stage (Core ML conversion + compression). Runs on Linux/macOS/Windows.
+coremltools>=8.0
+torch>=2.2,<2.8        # coremltools 9.x is tested against torch<=2.7
+torchvision>=0.17
+
+# Reason stage — Claude provider (optional; MockProvider needs nothing).
+anthropic>=0.40
+
+# Dev
+pytest>=8.0
